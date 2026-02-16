@@ -1,157 +1,171 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<title>Contact Form #08</title>
-<style>
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family: Arial, sans-serif;
-}
-
-body{
-    background:#ffffff;
-}
-
-.title{
-    text-align:center;
-    margin:40px 0;
-    font-size:22px;
-    font-weight:600;
-}
-
-.contact-container{
-    max-width:1100px;
-    margin:auto;
-    background:#f9f9f9;
-    display:grid;
-    grid-template-areas:
-        "form image";
-    grid-template-columns: 1fr 1fr;
-    padding:40px;
-    gap:30px;
-}
-
-.contact-form{
-    grid-area: form;
-}
-
-.contact-form h2{
-    margin-bottom:25px;
-    font-size:26px;
-}
-
-.form-grid{
-    display:grid;
-    grid-template-areas:
-        "name email"
-        "subject subject"
-        "message message"
-        "button button";
-    gap:15px;
-}
-
-.name{ grid-area:name; }
-.email{ grid-area:email; }
-.subject{ grid-area:subject; }
-.message{ grid-area:message; }
-.button{ grid-area:button; }
-
-label{
-    font-size:12px;
-    font-weight:600;
-    display:block;
-    margin-bottom:6px;
-}
-
-input, textarea{
-    width:100%;
-    padding:12px;
-    border:none;
-    border-radius:4px;
-    background:#ffffff;
-    outline:none;
-}
-
-textarea{
-    height:120px;
-    resize:none;
-}
-
-button{
-    background:#6aa84f;
-    color:#fff;
-    border:none;
-    padding:12px 30px;
-    border-radius:4px;
-    cursor:pointer;
-    width:fit-content;
-}
-
-button:hover{
-    background:#5c9645;
-}
-
-.contact-image{
-    grid-area: image;
-    background:url("https://images.unsplash.com/photo-1501004318641-b39e6451bec6")
-    center/cover no-repeat;
-    border-radius:6px;
-    width: 500px;
-    height: 400px;
-}
-
-@media(max-width:900px){
-    .contact-container{
-        grid-template-areas:
-            "form"
-            "image";
-        grid-template-columns:1fr;
-    }
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Biccas</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
-<body>
 
-<div class="title">Contact Form #08</div>
+<body class="bg-light">
 
-<div class="contact-container">
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg bg-palegren py-3">
+        <div class="container">
+            <a class="navbar-brand fw-bold text-success fs-3" href="#">Biccas</a>
 
-    <div class="contact-form">
-        <h2>Get in touch with us</h2>
+            <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#nav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-        <form class="form-grid">
-            <div class="name">
-                <label>FULL NAME</label>
-                <input type="text" placeholder="Name">
+            <div class="collapse navbar-collapse" id="nav">
+                <ul class="navbar-nav mx-auto gap-4">
+                    <li class="nav-item"><a class="nav-link active fw-semibold" href="#">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Product</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">FAQ</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Blog</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">About Us</a></li>
+                </ul>
+
+                <div>
+                    <button class="btn btn-outline-success btn-sm me-2 border-0 bg-transparent">Login</button>
+                    <button class="btn btn-success btn-sm">Sign Up</button>
+                </div>
             </div>
+        </div>
+    </nav>
 
-            <div class="email">
-                <label>EMAIL ADDRESS</label>
-                <input type="email" placeholder="Email">
-            </div>
+    <!-- Hero Section -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row align-items-center">
 
-            <div class="subject">
-                <label>SUBJECT</label>
-                <input type="text" placeholder="Subject">
-            </div>
+                <!-- Left Content -->
+                <div class="col-lg-6">
+                    <h1 class="display-4 fw-bold">
+                        We’re here to <br>
+                        Increase your <br>
+                        Productivity
+                    </h1>
 
-            <div class="message">
-                <label>MESSAGE</label>
-                <textarea placeholder="Message"></textarea>
-            </div>
+                    <p class="text-muted mt-3">
+                        Let's make your work more organize and easily using the Taskio Dashboard
+                        with many of the latest features in managing work every day.
+                    </p>
 
-            <div class="button">
-                <button type="submit">Send Message</button>
-            </div>
-        </form>
-    </div>
+                    <div class="mt-4">
+                        <button class="btn btn-success rounded-pill px-4 py-2">Try free trial</button>
+                        <span class="ms-3 fw-medium"><img src="./Frame 51.png" alt="logo"></span>
+                    </div>
+                </div>
 
-    <div class="contact-image"></div>
+                <!-- Right Image -->
+                <div class="col-lg-6 text-center">
+                    <div class="d-inline-block">
+                        <img src="./Group 138.png" class="img-fluid rounded">
+                    </div>
+                </div>
 
-</div>
 
-</body>
+                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+                <body class="bg-light">
+
+                    <section class="py-5">
+                        <div class="container text-center">
+
+                            <!-- Heading -->
+                            <h3 class="fw-semibold mb-4">
+                                More than 25,000 teams use Collabs
+                            </h3>
+
+                            <!-- Logo Box -->
+                            <div class="d-inline-flex align-items-center gap-4 px-4 py-2 ">
+                                <img src="./Logo (1).png" alt="logos" class="img-fluid">
+                            </div>
+
+                        </div>
+                    </section>
+
+                </body>
+
+
+                <body class="bg-light">
+
+                    <section class="py-5">
+                        <div class="container">
+                            <div class="row align-items-center">
+
+                                <!-- Left Column -->
+                                <div class="col-lg-6 mb-5 mb-lg-0">
+                                    <h2 class="fw-bold">How we support our partner all over the world</h2>
+                                    <p class="text-muted mt-3">
+                                        SaaS become a common delivery model for many business applications, including
+                                        office software, messaging software, payroll processing software, DBMS software,
+                                        management software
+                                    </p>
+
+                                    <!-- Ratings -->
+                                    <div class="d-flex gap-5 mt-4">
+                                        <div class="text-center">
+                                            <div class="text-warning mb-1">
+                                                ★★★★★
+                                            </div>
+                                            <div>4.9 / 5 rating</div>
+                                            <div class="text-muted small">databricks</div>
+                                        </div>
+
+                                        <div class="text-center">
+                                            <div class="text-warning mb-1">
+                                                ★★★★☆
+                                            </div>
+                                            <div>4.8 / 5 rating</div>
+                                            <div class="text-muted small">Chainalysis</div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Right Column -->
+                                <div class="col-lg-6">
+                                    <div class="d-flex flex-column gap-4">
+
+                                        <div class="d-flex align-items-start gap-3">
+                                            <img src="./Vector.png" alt="Publishing" class="img-fluid"
+                                                style="width:40px;">
+                                            <div>
+                                                <h6 class="fw-bold mb-1">Publishing</h6>
+                                                <p class="text-muted mb-0">Plan, collaborate, and publishing your
+                                                    content that drives meaningful engagement and growth for your brand
+                                                </p>
+                                            </div>
+                                        </div>
+
+                                        <div class="d-flex align-items-start gap-3">
+                                            <img src="./pie-chart 1.png" alt="Analytics" class="img-fluid"
+                                                style="width:40px;">
+                                            <div>
+                                                <h6 class="fw-bold mb-1">Analytics</h6>
+                                                <p class="text-muted mb-0">Analyze your performance and create gorgeous
+                                                    reports</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="d-flex align-items-start gap-3">
+                                            <img src="./command 1.png" alt="Engagement" class="img-fluid"
+                                                style="width:40px;">
+                                            <div>
+                                                <h6 class="fw-bold mb-1">Engagement</h6>
+                                                <p class="text-muted mb-0">Quickly navigate your audience and engage
+                                                    with them</p>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </section>
+
 </html>
