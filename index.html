@@ -1,171 +1,203 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Biccas</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Student Registration Form</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background: #f4f7fb;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      min-height: 100vh;
+      padding: 20px;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 900px;
+      background: white;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 6px;
+      font-weight: bold;
+    }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 15px;
+    }
+
+    textarea {
+      resize: vertical;
+    }
+
+    .gender-group,
+    .hobbies-group {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .error {
+      color: red;
+      font-size: 14px;
+      margin-top: 4px;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      border: none;
+      background: #007bff;
+      color: white;
+      font-size: 16px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #0056b3;
+    }
+
+    .students-data {
+      margin-top: 30px;
+    }
+
+    .student-card {
+      background: #f9f9f9;
+      padding: 15px;
+      margin-bottom: 15px;
+      border-left: 5px solid #007bff;
+      border-radius: 5px;
+    }
+
+    @media (max-width: 600px) {
+      .gender-group,
+      .hobbies-group {
+        flex-direction: column;
+      }
+    }
+  </style>
 </head>
 
-<body class="bg-light">
+<body>
 
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg bg-palegren py-3">
-        <div class="container">
-            <a class="navbar-brand fw-bold text-success fs-3" href="#">Biccas</a>
+  <div class="container">
+    <h1>Student Registration Form</h1>
 
-            <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#nav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+    <form id="registrationForm">
 
-            <div class="collapse navbar-collapse" id="nav">
-                <ul class="navbar-nav mx-auto gap-4">
-                    <li class="nav-item"><a class="nav-link active fw-semibold" href="#">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Product</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">FAQ</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Blog</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">About Us</a></li>
-                </ul>
+      <div class="form-group">
+        <label>Full Name</label>
+        <input type="text" id="fullName" />
+        <div class="error" id="nameError"></div>
+      </div>
 
-                <div>
-                    <button class="btn btn-outline-success btn-sm me-2 border-0 bg-transparent">Login</button>
-                    <button class="btn btn-success btn-sm">Sign Up</button>
-                </div>
-            </div>
+      <div class="form-group">
+        <label>Email Address</label>
+        <input type="email" id="email" />
+        <div class="error" id="emailError"></div>
+      </div>
+
+      <div class="form-group">
+        <label>Password</label>
+        <input type="password" id="password" />
+        <div class="error" id="passwordError"></div>
+      </div>
+
+      <div class="form-group">
+        <label>Confirm Password</label>
+        <input type="password" id="confirmPassword" />
+        <div class="error" id="confirmPasswordError"></div>
+      </div>
+
+      <div class="form-group">
+        <label>Phone Number</label>
+        <input type="text" id="phone" />
+        <div class="error" id="phoneError"></div>
+      </div>
+
+      <div class="form-group">
+        <label>Gender</label>
+        <div class="gender-group">
+          <label><input type="radio" name="gender" value="Male"> Male</label>
+          <label><input type="radio" name="gender" value="Female"> Female</label>
+          <label><input type="radio" name="gender" value="Other"> Other</label>
         </div>
-    </nav>
+        <div class="error" id="genderError"></div>
+      </div>
 
-    <!-- Hero Section -->
-    <section class="py-5">
-        <div class="container">
-            <div class="row align-items-center">
+      <div class="form-group">
+        <label>Course Selection</label>
+        <select id="course">
+          <option value="">Select Course</option>
+          <option value="Web Development">Web Development</option>
+          <option value="AI">Artificial Intelligence</option>
+          <option value="Cyber Security">Cyber Security</option>
+          <option value="Data Science">Data Science</option>
+        </select>
+        <div class="error" id="courseError"></div>
+      </div>
 
-                <!-- Left Content -->
-                <div class="col-lg-6">
-                    <h1 class="display-4 fw-bold">
-                        We’re here to <br>
-                        Increase your <br>
-                        Productivity
-                    </h1>
+      <div class="form-group">
+        <label>Hobbies</label>
+        <div class="hobbies-group">
+          <label><input type="checkbox" value="Reading"> Reading</label>
+          <label><input type="checkbox" value="Sports"> Sports</label>
+          <label><input type="checkbox" value="Gaming"> Gaming</label>
+          <label><input type="checkbox" value="Traveling"> Traveling</label>
+        </div>
+        <div class="error" id="hobbiesError"></div>
+      </div>
 
-                    <p class="text-muted mt-3">
-                        Let's make your work more organize and easily using the Taskio Dashboard
-                        with many of the latest features in managing work every day.
-                    </p>
+      <div class="form-group">
+        <label>Message/About Yourself</label>
+        <textarea id="message" rows="4"></textarea>
+        <div class="error" id="messageError"></div>
+      </div>
 
-                    <div class="mt-4">
-                        <button class="btn btn-success rounded-pill px-4 py-2">Try free trial</button>
-                        <span class="ms-3 fw-medium"><img src="./Frame 51.png" alt="logo"></span>
-                    </div>
-                </div>
+      <button type="submit">Register Student</button>
 
-                <!-- Right Image -->
-                <div class="col-lg-6 text-center">
-                    <div class="d-inline-block">
-                        <img src="./Group 138.png" class="img-fluid rounded">
-                    </div>
-                </div>
+    </form>
 
+    <div class="students-data">
+      <h2>Registered Students</h2>
+      <div id="studentList"></div>
+    </div>
 
-                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  </div>
 
-                <body class="bg-light">
+  <script src="script.js"></script>
 
-                    <section class="py-5">
-                        <div class="container text-center">
-
-                            <!-- Heading -->
-                            <h3 class="fw-semibold mb-4">
-                                More than 25,000 teams use Collabs
-                            </h3>
-
-                            <!-- Logo Box -->
-                            <div class="d-inline-flex align-items-center gap-4 px-4 py-2 ">
-                                <img src="./Logo (1).png" alt="logos" class="img-fluid">
-                            </div>
-
-                        </div>
-                    </section>
-
-                </body>
-
-
-                <body class="bg-light">
-
-                    <section class="py-5">
-                        <div class="container">
-                            <div class="row align-items-center">
-
-                                <!-- Left Column -->
-                                <div class="col-lg-6 mb-5 mb-lg-0">
-                                    <h2 class="fw-bold">How we support our partner all over the world</h2>
-                                    <p class="text-muted mt-3">
-                                        SaaS become a common delivery model for many business applications, including
-                                        office software, messaging software, payroll processing software, DBMS software,
-                                        management software
-                                    </p>
-
-                                    <!-- Ratings -->
-                                    <div class="d-flex gap-5 mt-4">
-                                        <div class="text-center">
-                                            <div class="text-warning mb-1">
-                                                ★★★★★
-                                            </div>
-                                            <div>4.9 / 5 rating</div>
-                                            <div class="text-muted small">databricks</div>
-                                        </div>
-
-                                        <div class="text-center">
-                                            <div class="text-warning mb-1">
-                                                ★★★★☆
-                                            </div>
-                                            <div>4.8 / 5 rating</div>
-                                            <div class="text-muted small">Chainalysis</div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- Right Column -->
-                                <div class="col-lg-6">
-                                    <div class="d-flex flex-column gap-4">
-
-                                        <div class="d-flex align-items-start gap-3">
-                                            <img src="./Vector.png" alt="Publishing" class="img-fluid"
-                                                style="width:40px;">
-                                            <div>
-                                                <h6 class="fw-bold mb-1">Publishing</h6>
-                                                <p class="text-muted mb-0">Plan, collaborate, and publishing your
-                                                    content that drives meaningful engagement and growth for your brand
-                                                </p>
-                                            </div>
-                                        </div>
-
-                                        <div class="d-flex align-items-start gap-3">
-                                            <img src="./pie-chart 1.png" alt="Analytics" class="img-fluid"
-                                                style="width:40px;">
-                                            <div>
-                                                <h6 class="fw-bold mb-1">Analytics</h6>
-                                                <p class="text-muted mb-0">Analyze your performance and create gorgeous
-                                                    reports</p>
-                                            </div>
-                                        </div>
-
-                                        <div class="d-flex align-items-start gap-3">
-                                            <img src="./command 1.png" alt="Engagement" class="img-fluid"
-                                                style="width:40px;">
-                                            <div>
-                                                <h6 class="fw-bold mb-1">Engagement</h6>
-                                                <p class="text-muted mb-0">Quickly navigate your audience and engage
-                                                    with them</p>
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-                    </section>
-
+</body>
 </html>
